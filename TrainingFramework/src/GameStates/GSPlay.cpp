@@ -1,5 +1,4 @@
 #include "GSPlay.h"
-
 #include "Shaders.h"
 #include "Texture.h"
 #include "Models.h"
@@ -42,11 +41,30 @@ void GSPlay::Init()
 	m_BackGround1->SetSize(screenWidth, screenHeight);
 	m_listBackGround.push_back(m_BackGround1);*/
 
+	texture = ResourceManagers::GetInstance()->GetTexture("quit2");
+	std::shared_ptr<GameButton> button;
+	button = std::make_shared<GameButton>(model, shader, texture);
+	button->Set2DPosition(screenWidth / 1.2, 750);
+	button->SetSize(100, 25);
+	button->SetOnClick([]() {
+		exit(0);
+	});
+	m_listButton.push_back(button);
+
+	texture = ResourceManagers::GetInstance()->GetTexture("back3");
+	button = std::make_shared<GameButton>(model, shader, texture);
+	button->Set2DPosition(screenWidth / 1.2, 700);
+	button->SetSize(100, 25);
+	button->SetOnClick([]() {
+		GameStateMachine::GetInstance()->PopState();
+	});
+	m_listButton.push_back(button);
+
 	//text game title
 	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
 	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("arialbd");
-	m_score = std::make_shared< Text>(shader, font, "score: 0", TEXT_COLOR::PURPLE, 1.0);
-	m_score->Set2DPosition(Vector2(5, 25));
+	m_score = std::make_shared< Text>(shader, font, "Score: 0", TEXT_COLOR::PURPLE, 1.0);
+	m_score->Set2DPosition(Vector2(screenWidth / 3, 25));
 
 	// Animation
 	shader = ResourceManagers::GetInstance()->GetShader("Animation");
@@ -55,6 +73,8 @@ void GSPlay::Init()
 	obj->Set2DPosition(100, 600);
 	obj->SetSize(100, 100);
 	m_listSpriteAnimations.push_back(obj);
+
+
 }
 
 void GSPlay::Exit()
@@ -86,6 +106,11 @@ void GSPlay::HandleKeyEvents(int key, bool bIsPressed)
 
 void GSPlay::HandleTouchEvents(int x, int y, bool bIsPressed)
 {
+	for (auto it : m_listButton)
+	{
+		(it)->HandleTouchEvents(x, y, bIsPressed);
+		if ((it)->IsHandle()) break;
+	}
 }
 
 void GSPlay::Update(float deltaTime)
@@ -94,12 +119,21 @@ void GSPlay::Update(float deltaTime)
 	{
 		obj->Update(deltaTime);
 	}
+	for (auto it : m_listButton)
+	{
+		it->Update(deltaTime);
+	}
 }
 
 void GSPlay::Draw()
 {
 	for (auto bg : m_listBackGround) {
 		bg->Draw();
+	}
+
+	for (auto it : m_listButton)
+	{
+		it->Draw();
 	}
 
 	for (auto obj : m_listSpriteAnimations)

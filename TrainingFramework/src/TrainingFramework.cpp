@@ -30,7 +30,7 @@ void Key(ESContext* esContext, unsigned char key, bool bbIsPresseded)
 }
 
 void Mouse(ESContext* esContext, GLint x, GLint y, bool bbIsPresseded)
-{
+{ 
 	Application::GetInstance()->HandleTouchEvent(x, y, bbIsPresseded);
 }
 

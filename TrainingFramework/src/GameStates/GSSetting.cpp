@@ -66,7 +66,6 @@ void GSSetting::Pause()
 
 void GSSetting::Resume()
 {
-
 }
 
 

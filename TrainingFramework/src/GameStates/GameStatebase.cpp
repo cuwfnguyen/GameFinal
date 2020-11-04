@@ -8,9 +8,11 @@
 #include "GSSetting.h"
 #include "GameStatebase.h"
 #include"GSCredit.h"
+
 std::shared_ptr<GameStateBase> GameStateBase::CreateState(StateTypes stt)
 {
 	std::shared_ptr<GameStateBase> gs = nullptr;
+	
 	switch (stt)
 	{
 	case STATE_INVALID:

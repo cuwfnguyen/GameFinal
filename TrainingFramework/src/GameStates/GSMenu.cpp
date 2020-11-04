@@ -86,7 +86,7 @@ void GSMenu::Pause()
 
 void GSMenu::Resume()
 {
-	GSMenu();
+	
 }
 
 

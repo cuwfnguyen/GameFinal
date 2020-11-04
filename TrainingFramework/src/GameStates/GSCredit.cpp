@@ -41,7 +41,7 @@ void GSCredit::Init()
 	button->Set2DPosition(screenWidth / 10, 20);
 	button->SetSize(100, 25);
 	button->SetOnClick([]() {
-		GameStateMachine::GetInstance()->ChangeState(StateTypes::STATE_Menu);
+		GameStateMachine::GetInstance()->PopState();
 	});
 	//chua nghi ra cach dung Resume trong PopState
 	m_listButton.push_back(button);
@@ -65,7 +65,7 @@ void GSCredit::Pause()
 
 void GSCredit::Resume()
 {
-	GSCredit();
+
 }
 
 

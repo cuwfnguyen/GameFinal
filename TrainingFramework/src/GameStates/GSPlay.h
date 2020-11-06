@@ -25,18 +25,24 @@ public:
 	void HandleTouchEvents(int x, int y, bool bIsPressed);
 	void Update(float deltaTime);
 	void Draw();
-
 	
 	void SetNewPostionForBullet();
-
+	
+	inline std::shared_ptr<SpriteAnimation> CurrentState()const
+	{
+		return obj;
+	}
 private:
-
+	const int m_MapWidth = 1366;
+	const int m_MapHeight = 369;
 	std::shared_ptr<Sprite2D> m_BackGround;
 	std::shared_ptr<Text>  m_score;
+	std::shared_ptr<SpriteAnimation> state1;
 	std::vector < std::shared_ptr<Sprite2D>> m_listSprite2D;
 	std::vector < std::shared_ptr<SpriteAnimation>> m_listSpriteAnimations;
 	std::vector < std::shared_ptr<Sprite2D>>m_listBackGround;
 	std::list<std::shared_ptr<GameButton>>	m_listButton;
-
+	std::shared_ptr<SpriteAnimation> state2;
+	std::shared_ptr<SpriteAnimation> obj;
 };
 

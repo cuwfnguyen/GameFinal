@@ -18,7 +18,7 @@ GSCredit::~GSCredit()
 void GSCredit::Init()
 {
 	auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D");
-	auto texture = ResourceManagers::GetInstance()->GetTexture("credit");
+	auto texture = ResourceManagers::GetInstance()->GetTexture("bg_credit");
 
 	//BackGround
 	auto shader = ResourceManagers::GetInstance()->GetShader("TextureShader");
@@ -27,23 +27,22 @@ void GSCredit::Init()
 	m_BackGround->SetSize(screenWidth, screenHeight);
 	std::shared_ptr<GameButton> button;
 	//exit button
-	texture = ResourceManagers::GetInstance()->GetTexture("button_quit");
+	texture = ResourceManagers::GetInstance()->GetTexture("quit2");
 	button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(screenWidth / 1.2, 750);
-	button->SetSize(100, 25);
+	button->Set2DPosition(55 * screenWidth / 60, 15 * screenHeight / 16);
+	button->SetSize(screenWidth / 6, screenHeight / 14.5);
 	button->SetOnClick([]() {
 		exit(0);
 	});
 	m_listButton.push_back(button);
 
-	texture = ResourceManagers::GetInstance()->GetTexture("button_back2");
+	texture = ResourceManagers::GetInstance()->GetTexture("button_back1");
 	button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(screenWidth / 10, 20);
-	button->SetSize(100, 25);
+	button->Set2DPosition(screenHeight / 9, screenHeight/10);
+	button->SetSize(screenWidth / 6, screenHeight / 14.5);
 	button->SetOnClick([]() {
 		GameStateMachine::GetInstance()->PopState();
 	});
-	//chua nghi ra cach dung Resume trong PopState
 	m_listButton.push_back(button);
 
 

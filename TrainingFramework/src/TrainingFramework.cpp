@@ -3,8 +3,8 @@
 #include "Application.h"
 #include "utilities.h" 
 
-GLint screenWidth = 480;
-GLint screenHeight = 800;
+GLint screenWidth =600 ;
+GLint screenHeight = 369;
 
 
 GLint Init(ESContext* esContext)

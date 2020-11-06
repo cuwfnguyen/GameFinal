@@ -1,8 +1,13 @@
 ﻿  GSPlay.cpp
-e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(35): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(47): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(56): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(67): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(42): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(54): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(55): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(63): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(64): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(71): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(72): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
+e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(88): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(95): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
 c:\program files (x86)\microsoft visual studio 14.0\vc\include\memory(901): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   c:\program files (x86)\microsoft visual studio 14.0\vc\include\memory(971): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[9],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[9],TEXT_COLOR &&,double &&)' being compiled
           with
@@ -14,12 +19,24 @@ c:\program files (x86)\microsoft visual studio 14.0\vc\include\memory(901): warn
           [
               _Ty=Text
           ]
-  e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(66): note: see reference to function template instantiation 'std::shared_ptr<Text> std::make_shared<Text,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[9],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[9],TEXT_COLOR &&,double &&)' being compiled
+  e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(81): note: see reference to function template instantiation 'std::shared_ptr<Text> std::make_shared<Text,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[9],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[9],TEXT_COLOR &&,double &&)' being compiled
   c:\program files (x86)\microsoft visual studio 14.0\vc\include\memory(439): note: see reference to class template instantiation 'std::_Ptr_base<_Ty>' being compiled
           with
           [
               _Ty=Sprite2D
           ]
-  e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.h(34): note: see reference to class template instantiation 'std::shared_ptr<Sprite2D>' being compiled
+  e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.h(38): note: see reference to class template instantiation 'std::shared_ptr<Sprite2D>' being compiled
+c:\program files (x86)\microsoft visual studio 14.0\vc\include\memory(901): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\memory(971): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Models>&,std::shared_ptr<Shaders>&,std::shared_ptr<Texture>&,int,int>(std::shared_ptr<Models> &,std::shared_ptr<Shaders> &,std::shared_ptr<Texture> &,int &&,int &&)' being compiled
+          with
+          [
+              _Ty=SpriteAnimation
+          ]
+  c:\program files (x86)\microsoft visual studio 14.0\vc\include\memory(971): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Models>&,std::shared_ptr<Shaders>&,std::shared_ptr<Texture>&,int,int>(std::shared_ptr<Models> &,std::shared_ptr<Shaders> &,std::shared_ptr<Texture> &,int &&,int &&)' being compiled
+          with
+          [
+              _Ty=SpriteAnimation
+          ]
+  e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(94): note: see reference to function template instantiation 'std::shared_ptr<SpriteAnimation> std::make_shared<SpriteAnimation,std::shared_ptr<Models>&,std::shared_ptr<Shaders>&,std::shared_ptr<Texture>&,int,int>(std::shared_ptr<Models> &,std::shared_ptr<Shaders> &,std::shared_ptr<Texture> &,int &&,int &&)' being compiled
   TrainingFramework.vcxproj -> E:\20201\ThucTapGameLoft\Programming_anim\\BIN-Nvidia\TrainingFramework.exe
   TrainingFramework.vcxproj -> E:\20201\ThucTapGameLoft\Programming_anim\\BIN-Nvidia\TrainingFramework.pdb (Full PDB)

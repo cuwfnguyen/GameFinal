@@ -18,7 +18,7 @@ GSMenu::~GSMenu()
 void GSMenu::Init()
 {
 	auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D");
-	auto texture = ResourceManagers::GetInstance()->GetTexture("bg_main_menu");
+	auto texture = ResourceManagers::GetInstance()->GetTexture("bg2");
 
 	//BackGround
 	auto shader = ResourceManagers::GetInstance()->GetShader("TextureShader");
@@ -29,8 +29,8 @@ void GSMenu::Init()
 	//play button
 	texture = ResourceManagers::GetInstance()->GetTexture("button_play");
 	std::shared_ptr<GameButton> button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(screenWidth / 2, 200);
-	button->SetSize(200, 50);
+	button->Set2DPosition(screenWidth / 1.96, screenHeight/3.7);
+	button->SetSize(screenWidth/6, screenHeight/14.8);
 	button->SetOnClick([]() {
 		GameStateMachine::GetInstance()->ChangeState(StateTypes::STATE_Play);
 		});
@@ -39,8 +39,8 @@ void GSMenu::Init()
 	//seting button
 	auto texture1 = ResourceManagers::GetInstance()->GetTexture("button_setting");
 	std::shared_ptr<GameButton> button1 = std::make_shared<GameButton>(model, shader, texture1);
-	button1->Set2DPosition(screenWidth / 2, 400);
-	button1->SetSize(200, 50);
+	button1->Set2DPosition(screenWidth / 1.96, 1.5*screenHeight/3.7);
+	button1->SetSize(screenWidth / 6, screenHeight / 14.8);
 	button1->SetOnClick([]() {
 		GameStateMachine::GetInstance()->ChangeState(StateTypes::STATE_Setting);
 	});
@@ -49,8 +49,8 @@ void GSMenu::Init()
 	//credit button
 	auto texture2 = ResourceManagers::GetInstance()->GetTexture("button_credit");
 	std::shared_ptr<GameButton> button2 = std::make_shared<GameButton>(model, shader, texture2);
-	button2->Set2DPosition(screenWidth / 2, 500);
-	button2->SetSize(200, 50);
+	button2->Set2DPosition(screenWidth / 1.96, 2*screenHeight/3.7);
+	button2->SetSize(screenWidth / 6, screenHeight / 14.8);
 	button2->SetOnClick([]() {
 		GameStateMachine::GetInstance()->ChangeState(StateTypes::STATE_Credit);
 	});
@@ -59,8 +59,8 @@ void GSMenu::Init()
 	//exit button
 	texture = ResourceManagers::GetInstance()->GetTexture("button_quit");
 	button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(screenWidth / 2, 300);
-	button->SetSize(200, 50);
+	button->Set2DPosition(screenWidth / 1.96, 2.5*screenHeight/3.7);
+	button->SetSize(screenWidth / 6, screenHeight / 14.8);
 	button->SetOnClick([]() {
 		exit(0);
 		});
@@ -70,8 +70,8 @@ void GSMenu::Init()
 	//text game title
 	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
 	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("arialbd");
-	m_Text_gameName = std::make_shared< Text>(shader, font, "MENU GAME", TEXT_COLOR::GREEN, 1.0);
-	m_Text_gameName->Set2DPosition(Vector2(screenWidth / 2 - 80, 120));
+	m_Text_gameName = std::make_shared< Text>(shader, font, "MENU GAME", TEXT_COLOR::RED, 0.7);
+	m_Text_gameName->Set2DPosition(Vector2(2.5*screenWidth/6, screenHeight/7.4));
 }
 
 void GSMenu::Exit()

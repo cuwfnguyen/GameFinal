@@ -18,7 +18,7 @@ GSSetting::~GSSetting()
 void GSSetting::Init()
 {
 	auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D");
-	auto texture = ResourceManagers::GetInstance()->GetTexture("bg_main_menu");
+	auto texture = ResourceManagers::GetInstance()->GetTexture("bg_setting");
 
 	//BackGround
 	auto shader = ResourceManagers::GetInstance()->GetShader("TextureShader");
@@ -29,18 +29,18 @@ void GSSetting::Init()
 	//play button
 	texture = ResourceManagers::GetInstance()->GetTexture("button_back");
 	std::shared_ptr<GameButton> button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(screenWidth / 2, 200);
-	button->SetSize(200, 50);
+	button->Set2DPosition(screenWidth / 1.96, screenHeight / 3.7);
+	button->SetSize(screenWidth / 6, screenHeight / 14.8);
 	button->SetOnClick([]() {
-		GameStateMachine::GetInstance()->PopState();// chua xu ly duoc ham Resume()
+		GameStateMachine::GetInstance()->PopState();
 	});
 	m_listButton.push_back(button);
 
 	//exit button
 	texture = ResourceManagers::GetInstance()->GetTexture("button_quit");
 	button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(screenWidth / 2, 300);
-	button->SetSize(200, 50);
+	button->Set2DPosition(screenWidth / 1.96, 1.5*screenHeight / 3.7);
+	button->SetSize(screenWidth / 6, screenHeight / 14.8);
 	button->SetOnClick([]() {
 		exit(0);
 	});
@@ -50,8 +50,8 @@ void GSSetting::Init()
 	//text game title
 	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
 	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("arialbd");
-	m_Text_gameName = std::make_shared< Text>(shader, font, "SETTING", TEXT_COLOR::BLUE, 1.0);
-	m_Text_gameName->Set2DPosition(Vector2(screenWidth / 2.5, 120));
+	m_Text_gameName = std::make_shared< Text>(shader, font, "SETTING", TEXT_COLOR::RED, 0.7);
+	m_Text_gameName->Set2DPosition(Vector2(2.7*screenWidth / 6, screenHeight / 8));
 }
 
 void GSSetting::Exit()

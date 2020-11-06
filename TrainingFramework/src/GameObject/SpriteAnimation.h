@@ -15,6 +15,7 @@ protected:
 	GLfloat			m_currentTime;
 
 public:
+	
 	SpriteAnimation(std::shared_ptr<Models> model, std::shared_ptr<Shaders> shader, std::shared_ptr<Texture> texture, GLint numFrames, GLfloat frameTime);	
 	~SpriteAnimation();
 

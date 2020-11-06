@@ -127,7 +127,7 @@ void Camera::MoveBackward(GLfloat deltaTime)
 	m_VecCameraPos		-=	deltaMove*deltaTime;
 	m_VecTargetPos		-=	deltaMove*deltaTime;
 }
-void Camera::MoveLeft(GLfloat deltaTime)
+void Camera::MoveLeft(float deltaTime)
 {
 	m_isChange			=	true;
 	Vector3 deltaMove	=	-(m_VecCameraPos-m_VecTargetPos).Normalize()*m_fSpeed;
@@ -136,7 +136,7 @@ void Camera::MoveLeft(GLfloat deltaTime)
 	m_VecTargetPos		-=	deltaMove*deltaTime;
 }
 
-void Camera::MoveRight(GLfloat deltaTime)
+void Camera::MoveRight(float deltaTime)
 {
 	m_isChange			=	true;
 	Vector3 deltaMove	=	-(m_VecCameraPos-m_VecTargetPos).Normalize()*m_fSpeed;

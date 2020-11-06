@@ -133,7 +133,7 @@ void SpriteAnimation::Update(GLfloat deltatime)
 void SpriteAnimation::Set2DPosition(GLfloat width, GLfloat height)
 {
 	m_Vec2DPos.x = width;
-	m_Vec2DPos.y = height;
+	m_Vec2DPos.y = height; 
 
 	float xx = (2.0 * m_Vec2DPos.x) / screenWidth - 1.0;
 	float yy = 1.0 - (2.0 * m_Vec2DPos.y) / screenHeight;

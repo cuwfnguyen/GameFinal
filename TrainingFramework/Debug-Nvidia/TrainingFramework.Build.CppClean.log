@@ -1,9 +1,9 @@
 e:\20201\thuctapgameloft\programming_anim\trainingframework\debug-nvidia\vc140.pdb
 e:\20201\thuctapgameloft\programming_anim\trainingframework\debug-nvidia\vc140.idb
-e:\20201\thuctapgameloft\programming_anim\trainingframework\debug-nvidia\application.obj
-e:\20201\thuctapgameloft\programming_anim\trainingframework\debug-nvidia\resourcemanagers.obj
 e:\20201\thuctapgameloft\programming_anim\trainingframework\debug-nvidia\font.obj
 e:\20201\thuctapgameloft\programming_anim\trainingframework\debug-nvidia\gamebutton.obj
+e:\20201\thuctapgameloft\programming_anim\trainingframework\debug-nvidia\obstacles.obj
+e:\20201\thuctapgameloft\programming_anim\trainingframework\debug-nvidia\player.obj
 e:\20201\thuctapgameloft\programming_anim\trainingframework\debug-nvidia\sprite2d.obj
 e:\20201\thuctapgameloft\programming_anim\trainingframework\debug-nvidia\camera.obj
 e:\20201\thuctapgameloft\programming_anim\trainingframework\debug-nvidia\sprite3d.obj
@@ -20,10 +20,12 @@ e:\20201\thuctapgameloft\programming_anim\trainingframework\debug-nvidia\gsmenu.
 e:\20201\thuctapgameloft\programming_anim\trainingframework\debug-nvidia\gsplay.obj
 e:\20201\thuctapgameloft\programming_anim\trainingframework\debug-nvidia\gssetting.obj
 e:\20201\thuctapgameloft\programming_anim\trainingframework\debug-nvidia\trainingframework.obj
+e:\20201\thuctapgameloft\programming_anim\trainingframework\debug-nvidia\characterstate.obj
+e:\20201\thuctapgameloft\programming_anim\trainingframework\debug-nvidia\application.obj
+e:\20201\thuctapgameloft\programming_anim\trainingframework\debug-nvidia\resourcemanagers.obj
 e:\20201\thuctapgameloft\programming_anim\bin-nvidia\trainingframework.ilk
 e:\20201\thuctapgameloft\programming_anim\bin-nvidia\trainingframework.exe
 e:\20201\thuctapgameloft\programming_anim\bin-nvidia\trainingframework.pdb
-e:\20201\thuctapgameloft\programming_anim\trainingframework\debug-nvidia\trainingframework.vcxprojresolveassemblyreference.cache
 e:\20201\thuctapgameloft\programming_anim\\bin-nvidia\trainingframework.pdb
 e:\20201\thuctapgameloft\programming_anim\\bin-nvidia\trainingframework.exe
 e:\20201\thuctapgameloft\programming_anim\\bin-nvidia\trainingframework.ilk

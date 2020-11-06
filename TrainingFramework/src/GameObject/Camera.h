@@ -21,8 +21,6 @@ class Camera
 	Matrix		GetWorldMatrix();
 	void 		MoveForward(GLfloat deltaTime);
 	void 		MoveBackward(GLfloat deltaTime);
-	void 		MoveLeft(GLfloat deltaTime);
-	void 		MoveRight(GLfloat deltaTime);
 	void 		RotationUp(GLfloat deltaTime);
 	void 		RotationDown(GLfloat deltaTime);
 	void 		RotationLeft(GLfloat deltaTime);
@@ -32,6 +30,8 @@ class Camera
 public:
 	Camera(void);
 	~Camera(void);
+	void 		MoveLeft(float deltaTime);
+	void 		MoveRight(float deltaTime);
 	void		Init(Vector3 cameraPos,Vector3 targetPos,GLfloat fovY,GLfloat aspect,GLfloat fNear,GLfloat fFar,GLfloat fSpeed);
 	Matrix		GetLookAtCamera();
 	Vector3		GetLocation();

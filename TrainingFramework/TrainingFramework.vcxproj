@@ -56,7 +56,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Nvidia|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
     <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
@@ -123,7 +123,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Nvidia|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(SolutionDir)\Include\AMD;$(SolutionDir)\freetype\include;$(SolutionDir)\Utilities\src;$(projectdir)\src\GameManager;$(projectdir)\src\GameObject;$(projectdir)\src\GameState;$(projectdir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Include\AMD;$(SolutionDir)\freetype\include;$(SolutionDir)\Utilities\src;$(projectdir)\src\GameManager;$(projectdir)\src\GameObject;$(projectdir)\src\GameState;$(projectdir)\src;$(SolutionDir)\Include\Soloud;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -134,8 +134,8 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>libEGL.lib;libGLESv2.lib;WinMM.Lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)\Lib\Nvidia;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libEGL.lib;libGLESv2.lib;WinMM.Lib;soloud_static.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Lib\Nvidia;$(SolutionDir)\Lib\Soloud;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
@@ -145,7 +145,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\Include\AMD;$(SolutionDir)\freetype\include;$(SolutionDir)\Utilities\src;$(projectdir)\src\GameManager;$(projectdir)\src\GameObject;$(projectdir)\src\GameState;$(projectdir)\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Include\AMD;$(SolutionDir)\freetype\include;$(SolutionDir)\Utilities\src;$(projectdir)\src\GameManager;$(projectdir)\src\GameObject;$(projectdir)\src\GameState;$(projectdir)\src;$(SolutionDir)\Include\Soloud;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -155,8 +155,8 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>libEGL.lib;libGLESv2.lib;WinMM.Lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)\Lib\Nvidia;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libEGL.lib;libGLESv2.lib;WinMM.Lib;soloud_static.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Lib\Nvidia;$(SolutionDir)\Lib\Soloud;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
@@ -284,6 +284,41 @@
     <ClCompile Include="src\TrainingFramework.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\soloud20200207\include\soloud.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_audiosource.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_bassboostfilter.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_biquadresonantfilter.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_bus.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_c.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_dcremovalfilter.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_echofilter.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_error.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_fader.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_fft.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_fftfilter.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_file.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_file_hack_off.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_file_hack_on.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_filter.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_flangerfilter.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_freeverbfilter.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_internal.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_lofifilter.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_misc.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_monotone.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_noise.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_openmpt.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_queue.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_robotizefilter.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_sfxr.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_speech.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_tedsid.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_thread.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_vic.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_vizsn.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_wav.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_waveshaperfilter.h" />
+    <ClInclude Include="..\..\soloud20200207\include\soloud_wavstream.h" />
     <ClInclude Include="src\Application.h" />
     <ClInclude Include="src\GameConfig.h" />
     <ClInclude Include="src\GameManager\ResourceManagers.h" />

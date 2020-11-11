@@ -1,10 +1,12 @@
 #pragma once
 #include "Sprite2D.h"
-class Obstacles :
-	public Sprite2D
+#include"SpriteAnimation.h"
+class Obstacles : public SpriteAnimation
 {
 public:
-	Obstacles();
+	Obstacles(std::shared_ptr<Models> model, std::shared_ptr<Shaders> shader, std::shared_ptr<Texture> texture, GLint numFrames, GLfloat frameTime) :SpriteAnimation(model, shader, texture, numFrames, frameTime) {};
+
 	~Obstacles();
+
 };
 

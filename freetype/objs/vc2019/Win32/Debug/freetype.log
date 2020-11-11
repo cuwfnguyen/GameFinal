@@ -1,6 +1,4 @@
-﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppClean.targets(76,5): warning : The process cannot access the file 'e:\20201\thuctapgameloft\programming_anim\freetype\objs\vc2019\win32\freetype.lib' because it is being used by another process.
-C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppClean.targets(76,5): warning : The process cannot access the file 'e:\20201\thuctapgameloft\programming_anim\freetype\objs\vc2019\win32\freetype.lib' because it is being used by another process.
-  autofit.c
+﻿  autofit.c
   bdf.c
   cff.c
   ftbase.c

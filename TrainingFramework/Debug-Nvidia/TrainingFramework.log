@@ -1,42 +1,35 @@
-﻿  GSPlay.cpp
-e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(42): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(54): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(55): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
-e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(63): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(64): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
-e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(71): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(72): warning C4244: 'argument': conversion from 'double' to 'GLint', possible loss of data
-e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(88): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(95): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\memory(901): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\memory(971): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[9],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[9],TEXT_COLOR &&,double &&)' being compiled
-          with
-          [
-              _Ty=Text
-          ]
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\memory(971): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[9],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[9],TEXT_COLOR &&,double &&)' being compiled
-          with
-          [
-              _Ty=Text
-          ]
-  e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(81): note: see reference to function template instantiation 'std::shared_ptr<Text> std::make_shared<Text,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[9],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[9],TEXT_COLOR &&,double &&)' being compiled
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\memory(439): note: see reference to class template instantiation 'std::_Ptr_base<_Ty>' being compiled
-          with
-          [
-              _Ty=Sprite2D
-          ]
-  e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.h(38): note: see reference to class template instantiation 'std::shared_ptr<Sprite2D>' being compiled
-c:\program files (x86)\microsoft visual studio 14.0\vc\include\memory(901): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\memory(971): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Models>&,std::shared_ptr<Shaders>&,std::shared_ptr<Texture>&,int,int>(std::shared_ptr<Models> &,std::shared_ptr<Shaders> &,std::shared_ptr<Texture> &,int &&,int &&)' being compiled
-          with
-          [
-              _Ty=SpriteAnimation
-          ]
-  c:\program files (x86)\microsoft visual studio 14.0\vc\include\memory(971): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Models>&,std::shared_ptr<Shaders>&,std::shared_ptr<Texture>&,int,int>(std::shared_ptr<Models> &,std::shared_ptr<Shaders> &,std::shared_ptr<Texture> &,int &&,int &&)' being compiled
-          with
-          [
-              _Ty=SpriteAnimation
-          ]
-  e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamestates\gsplay.cpp(94): note: see reference to function template instantiation 'std::shared_ptr<SpriteAnimation> std::make_shared<SpriteAnimation,std::shared_ptr<Models>&,std::shared_ptr<Shaders>&,std::shared_ptr<Texture>&,int,int>(std::shared_ptr<Models> &,std::shared_ptr<Shaders> &,std::shared_ptr<Texture> &,int &&,int &&)' being compiled
-  TrainingFramework.vcxproj -> E:\20201\ThucTapGameLoft\Programming_anim\\BIN-Nvidia\TrainingFramework.exe
-  TrainingFramework.vcxproj -> E:\20201\ThucTapGameLoft\Programming_anim\\BIN-Nvidia\TrainingFramework.pdb (Full PDB)
+﻿  Application.cpp
+e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamemanager\resourcemanagers.h(13): fatal error C1083: Cannot open include file: 'soloud.h': No such file or directory
+  Generating Code...
+  Compiling...
+  ResourceManagers.cpp
+e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamemanager\resourcemanagers.h(13): fatal error C1083: Cannot open include file: 'soloud.h': No such file or directory
+  Generating Code...
+  Compiling...
+  GSCredit.cpp
+e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamemanager\resourcemanagers.h(13): fatal error C1083: Cannot open include file: 'soloud.h': No such file or directory
+  Generating Code...
+  Compiling...
+  GSIntro.cpp
+e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamemanager\resourcemanagers.h(13): fatal error C1083: Cannot open include file: 'soloud.h': No such file or directory
+  Generating Code...
+  Compiling...
+  GSMenu.cpp
+e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamemanager\resourcemanagers.h(13): fatal error C1083: Cannot open include file: 'soloud.h': No such file or directory
+  Generating Code...
+  Compiling...
+  GSPlay.cpp
+e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamemanager\resourcemanagers.h(13): fatal error C1083: Cannot open include file: 'soloud.h': No such file or directory
+  Generating Code...
+  Compiling...
+  GSSetting.cpp
+e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamemanager\resourcemanagers.h(13): fatal error C1083: Cannot open include file: 'soloud.h': No such file or directory
+  Generating Code...
+  Compiling...
+  GameStateMachine.cpp
+e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamemanager\resourcemanagers.h(13): fatal error C1083: Cannot open include file: 'soloud.h': No such file or directory
+  Generating Code...
+  Compiling...
+  GameStatebase.cpp
+e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gamemanager\resourcemanagers.h(13): fatal error C1083: Cannot open include file: 'soloud.h': No such file or directory
+  Generating Code...

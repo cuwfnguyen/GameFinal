@@ -6,6 +6,7 @@
 class GameStateBase
 {
 public:
+	
 	GameStateBase(void){}
 	virtual ~GameStateBase(void){}
 
@@ -26,6 +27,7 @@ public:
 	}*/
 
 	static std::shared_ptr<GameStateBase> CreateState(StateTypes stt);
+private:
 	
 
 };

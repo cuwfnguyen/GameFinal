@@ -4,7 +4,6 @@
 #include <list>
 
 class GameStateBase;
-
 enum StateTypes
 {
 	STATE_INVALID = 0,
@@ -31,11 +30,10 @@ public:
 	void ChangeState(StateTypes stt);
 	void PushState(StateTypes stt);
 	void PopState();
-
 	bool isRunning() { return m_running; }
 	void Quit() { m_running = false; }
 	void PerformStateChange();
-
+	
 	inline std::shared_ptr<GameStateBase>	CurrentState()const
 	{
 		return m_pActiveState;
@@ -58,5 +56,6 @@ private:
 	std::shared_ptr<GameStateBase>	m_pNextState;
 	bool m_running;
 	bool m_fullscreen;
+	
 };
 

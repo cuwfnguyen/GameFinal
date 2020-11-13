@@ -1,8 +1,8 @@
 #include"GSSetting.h"
 
 extern int screenWidth; //need get on Graphic engine
-extern int screenHeight; //need get on Graphic engine
-
+extern int screenHeight; //need get on Graphic 
+int check = 0;
 GSSetting::GSSetting()
 {
 
@@ -26,32 +26,53 @@ void GSSetting::Init()
 	m_BackGround->Set2DPosition(screenWidth / 2, screenHeight / 2);
 	m_BackGround->SetSize(screenWidth, screenHeight);
 
-	//play button
-	texture = ResourceManagers::GetInstance()->GetTexture("button_back");
-	std::shared_ptr<GameButton> button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(screenWidth / 1.96, screenHeight / 3.7);
-	button->SetSize(screenWidth / 6, screenHeight / 14.8);
+	//back
+
+	std::shared_ptr<GameButton> button;
+	texture = ResourceManagers::GetInstance()->GetTexture("back_play");
+	button = std::make_shared<GameButton>(model, shader, texture);
+	button->Set2DPosition(0.05*screenWidth, screenHeight / 20);
+	button->SetSize(screenWidth / 18, screenHeight / 14);
 	button->SetOnClick([]() {
 		GameStateMachine::GetInstance()->PopState();
 	});
 	m_listButton.push_back(button);
 
-	//exit button
-	texture = ResourceManagers::GetInstance()->GetTexture("button_quit");
+	//sound
+	texture = ResourceManagers::GetInstance()->GetTexture("sound_on");
 	button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(screenWidth / 1.96, 1.5*screenHeight / 3.7);
-	button->SetSize(screenWidth / 6, screenHeight / 14.8);
-	button->SetOnClick([]() {
-		exit(0);
+	button->Set2DPosition(screenWidth / 1.96, screenHeight /2);
+	button->SetSize(75,75);
+	button->SetOnClick([]() 
+	{
+		check = 1;
 	});
+	if (check == 1)
+	{
+		sound = true;
+	}
+	
 	m_listButton.push_back(button);
 
+	texture = ResourceManagers::GetInstance()->GetTexture("sound_off");
+	button = std::make_shared<GameButton>(model, shader, texture);
+	button->Set2DPosition(screenWidth / 1.6, screenHeight / 2);
+	button->SetSize(80, 80);
+	button->SetOnClick([]()
+	{
+		check = 0;
+	});
+	if (check == 0) 
+	{
+		sound = false;
+	}
+	m_listButton.push_back(button);
 
 	//text game title
 	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
 	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("arialbd");
 	m_Text_gameName = std::make_shared< Text>(shader, font, "SETTING", TEXT_COLOR::RED, 0.7);
-	m_Text_gameName->Set2DPosition(Vector2(2.7*screenWidth / 6, screenHeight / 8));
+//	m_Text_gameName->Set2DPosition(Vector2(2.7*screenWidth / 6, screenHeight / 8));
 }
 
 void GSSetting::Exit()

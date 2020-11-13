@@ -7,6 +7,7 @@ GameStateMachine::GameStateMachine()
 	m_running = true;
 	m_pActiveState = 0;
 	m_pNextState = 0;
+
 }
 
 

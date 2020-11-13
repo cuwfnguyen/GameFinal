@@ -5,7 +5,8 @@
 
 GLint screenWidth =733 ;
 GLint screenHeight = 550;
-
+GLint g = 9;
+GLint ySpeed = 0;
 
 GLint Init(ESContext* esContext)
 {

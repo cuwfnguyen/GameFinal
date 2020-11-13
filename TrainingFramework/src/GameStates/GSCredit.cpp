@@ -25,27 +25,18 @@ void GSCredit::Init()
 	m_BackGround = std::make_shared<Sprite2D>(model, shader, texture);
 	m_BackGround->Set2DPosition(screenWidth / 2, screenHeight / 2);
 	m_BackGround->SetSize(screenWidth, screenHeight);
+	
+	//back button
 	std::shared_ptr<GameButton> button;
-	//exit button
-	texture = ResourceManagers::GetInstance()->GetTexture("quit2");
+	texture = ResourceManagers::GetInstance()->GetTexture("back_play");
 	button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(55 * screenWidth / 60, 15 * screenHeight / 16);
-	button->SetSize(screenWidth / 6, screenHeight / 14.5);
-	button->SetOnClick([]() {
-		exit(0);
-	});
-	m_listButton.push_back(button);
-
-	texture = ResourceManagers::GetInstance()->GetTexture("button_back1");
-	button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(screenHeight / 9, screenHeight/10);
-	button->SetSize(screenWidth / 6, screenHeight / 14.5);
+	button->Set2DPosition(0.05*screenWidth, screenHeight / 20);
+	button->SetSize(screenWidth / 20, screenHeight / 16);
 	button->SetOnClick([]() {
 		GameStateMachine::GetInstance()->PopState();
 	});
 	m_listButton.push_back(button);
-
-
+	
 	//text game title
 	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
 	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("arialbd");

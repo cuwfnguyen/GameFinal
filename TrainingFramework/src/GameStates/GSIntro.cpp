@@ -70,7 +70,7 @@ void GSIntro::HandleTouchEvents(int x, int y, bool bIsPressed)
 void GSIntro::Update(float deltaTime)
 {
 	m_time += deltaTime;
-	if (m_time > 1.3)
+	if (m_time > 2)
 	{
 		GameStateMachine::GetInstance()->ChangeState(StateTypes::STATE_Menu);
 		m_time = 0;

@@ -1,12 +1,38 @@
 #pragma once
 #include "Sprite2D.h"
-#include"SpriteAnimation.h"
-class Obstacles : public SpriteAnimation
+#include "ResourceManagers.h"
+#include "Player.h"
+
+class Player;
+extern int xSpeed;
+extern int screenWidth;
+
+class Obstacles:
+	public Sprite2D
 {
 public:
-	Obstacles(std::shared_ptr<Models> model, std::shared_ptr<Shaders> shader, std::shared_ptr<Texture> texture, GLint numFrames, GLfloat frameTime) :SpriteAnimation(model, shader, texture, numFrames, frameTime) {};
+	Obstacles(std::shared_ptr<Models> model, std::shared_ptr<Shaders> shader, std::shared_ptr<Texture> texture)
+		:Sprite2D(model, shader, texture) {};
+	Obstacles() = default;
 
 	~Obstacles();
 
+	void	SetSize(GLint width, GLint height);
+
+	Vector2	GetSize() {
+		return m_Size;
+	}
+
+	void	Update(GLfloat deltatime);
+
+	void	CheckInScreen();
+
+	bool	GetIsInScreen() {
+		return m_isInScreen;
+	};
+private:
+
+	Vector2 m_Size;
+	bool	m_isInScreen;
 };
 

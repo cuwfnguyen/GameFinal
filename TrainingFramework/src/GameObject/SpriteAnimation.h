@@ -7,6 +7,7 @@ private:
 	void			CaculateWorldMatrix();
 protected:
 	Vector2			m_Vec2DPos;
+	Vector2			m_GSize;
 	GLint			m_iHeight;
 	GLint			m_iWidth;
 	GLint			m_numFrames;
@@ -28,5 +29,7 @@ public:
 
 	Vector2		Get2DPosition();
 	void		SetSize(GLint width, GLint height);
+	bool		m_isActive = true;
+	Vector2		GetSize();
 };
 

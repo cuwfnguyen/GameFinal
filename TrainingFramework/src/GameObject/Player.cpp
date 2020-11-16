@@ -13,18 +13,18 @@ Player::Player(std::shared_ptr<Models> model, std::shared_ptr<Shaders> shader, s
 
 	shader = ResourceManagers::GetInstance()->GetShader("Animation");
 	texture = ResourceManagers::GetInstance()->GetTexture("test2");
-	m_Jump = std::make_shared<SpriteAnimation>(model, shader, texture, 10, 0.07f);
-	m_Jump->Set2DPosition(m_Position.x, m_Position.y);
-	m_Jump->SetSize(60, 60);
-	m_listSpriteAnimations.push_back(m_Jump);
-
-	texture = ResourceManagers::GetInstance()->GetTexture("player1");
-	m_Nor = std::make_shared<SpriteAnimation>(model, shader, texture, 1, 3);
+	m_Nor = std::make_shared<SpriteAnimation>(model, shader, texture, 10, 0.07f);
 	m_Nor->Set2DPosition(m_Position.x, m_Position.y);
-	m_Nor->SetSize(40, 40);
+	m_Nor->SetSize(60, 60);
 	m_listSpriteAnimations.push_back(m_Nor);
 
-	obj = m_Jump;
+	texture = ResourceManagers::GetInstance()->GetTexture("test1");
+	m_Jump = std::make_shared<SpriteAnimation>(model, shader, texture, 1, 3);
+	m_Jump->Set2DPosition(m_Position.x, m_Position.y);
+	m_Jump->SetSize(60,60);
+	m_listSpriteAnimations.push_back(m_Jump);
+
+	obj = m_Nor;
 
 }
 
@@ -39,12 +39,12 @@ void Player::HandleKeyEvents(GLbyte key, bool bIsPressed)
 {
 	if (bIsPressed)
 	{
-		if (key == VK_UP)
+		if (key == VK_SPACE)
 		{
 			obj = m_listSpriteAnimations[0];
 			if (!m_isInAir)
 			{
-				MOVE = VK_UP;
+				MOVE = VK_SPACE;
 				m_isInAir = true;
 				
 			}
@@ -54,41 +54,52 @@ void Player::HandleKeyEvents(GLbyte key, bool bIsPressed)
 	{
 		m_isInAir = false;
 		MOVE = 0;
-		//obj = m_listSpriteAnimations[1];
 	}
 }
 
+void Player::SetSize(GLint width, GLint height)
+{
+	Sprite2D::SetSize(width, height);
+	m_Size.x = width;
+	m_Size.y = height;
+}
 void Player::CheckObs(std::shared_ptr<Obstacles> obs) {
 
-	Vector2 pos = GetObj()->Get2DPosition();
-	Vector2 fPos = obs->Get2DPosition();
-	Vector2 fSize = obs->GetSize();
+	Vector2 posObj = GetObj()->Get2DPosition();
+	Vector2 posObs = obs->Get2DPosition();
+	Vector2 sizeObs = obs->GetSize();
+	//size 60. 60 
 
-	if ((pos.y + 26 <= fPos.y - fSize.y * 0.5 + 11) && (pos.y + 26 >= fPos.y - fSize.y * 0.5) && (pos.x + 10 >= fPos.x - fSize.x * 0.5 && pos.x - 10 <= fPos.x + fSize.x * 0.5))
+	/*if (((posObj.x-posObs.x)<=(60+sizeObs.x)/2)&& ((posObj.y - posObs.y) <= (60 + sizeObs.y) / 2))
 	{
-		m_Position.y = fPos.y - 0.5*fSize.y - 26;
 		m_isInAir = false;
+		printf("Xu ly va cham");
 	}
-	else m_isInAir = true;
+	else m_isInAir = true;*/
 }
+
 void Player::Move(GLfloat deltaTime) {
 	if (m_isAlive)
 	{
 		if (MOVE)
 		{
-			if (MOVE == VK_UP)
+			if (MOVE == VK_SPACE)
 			{
 				if (m_Position.y > 10)
 				{
-					m_Position.y -= 200 * deltaTime;
+					m_Position.y -= 300 * deltaTime;
+					obj = m_Jump;
 					obj->Set2DPosition(m_Position);
 				}
 			}
 		}
 		else
 		{
-			m_Position.y += 100 * deltaTime;
-			obj->Set2DPosition(m_Position);
+			if(m_Position.y < 520)
+			{
+				m_Position.y += 150 * deltaTime;
+				obj->Set2DPosition(m_Position);
+			}	
 		}
 	}
 }

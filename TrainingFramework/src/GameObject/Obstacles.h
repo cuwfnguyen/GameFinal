@@ -25,11 +25,6 @@ public:
 
 	void	Update(GLfloat deltatime);
 
-	void	CheckInScreen();
-
-	bool	GetIsInScreen() {
-		return m_isInScreen;
-	};
 private:
 
 	Vector2 m_Size;

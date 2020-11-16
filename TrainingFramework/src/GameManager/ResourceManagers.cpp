@@ -17,7 +17,8 @@ ResourceManagers::ResourceManagers()
 	m_ModelsPath = dataPath + "Model\\";
 	m_FontPath = dataPath + "fonts\\";
 	m_SoundsPath = dataPath + "Sounds\\";
-	m_Soloud = std::make_shared < SoLoud::Soloud>();
+	
+	m_Soloud = std::make_shared<SoLoud::Soloud>();
 	m_Soloud->init();
 
 }
@@ -168,10 +169,10 @@ void ResourceManagers::AddSound(const std::string&name)
 	if (it != m_MapWave.end()) {
 		return;
 	}
-	std::shared_ptr<SoLoud::Wav> wave;
-	std::string wav = m_SoundsPath + name + ".wav";
+	std::shared_ptr<SoLoud::Wav>wave;
+	std::string wav = m_SoundsPath + name + ".mp3";
 	wave = std::make_shared<SoLoud::Wav>();
-	wave->load(wav.c_str());
+	//wave.load(wav.c_str());
 	m_MapWave.insert(std::pair<std::string, std::shared_ptr<SoLoud::Wav>>(name, wave));
 
 }
@@ -182,7 +183,7 @@ void ResourceManagers::PlaySound(const std::string &name, bool loop) {
 		wave = it->second;
 	}
 	else {
-		std::string wav = m_SoundsPath + name + ".wav";
+		std::string wav = m_SoundsPath + name + ".mp3";
 		wave = std::make_shared<SoLoud::Wav>();
 		wave->load(wav.c_str());
 		m_MapWave.insert(std::pair<std::string, std::shared_ptr<SoLoud::Wav>>(name, wave));
@@ -196,5 +197,13 @@ auto it = m_MapWave.find(name);
 if (it != m_MapWave.end()) {
 	wave = it->second;
 }
-m_Soloud->stopAudioSource(*wave);
+m_Soloud->setPauseAll(true);
+}
+void ResourceManagers::ResumeSound(const std::string &name) {
+	std::shared_ptr<SoLoud::Wav>wave;
+	auto it = m_MapWave.find(name);
+	if (it != m_MapWave.end()) {
+		wave = it->second;
+	}
+	m_Soloud->setPauseAll(false);
 }

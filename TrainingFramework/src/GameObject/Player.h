@@ -29,7 +29,10 @@ public:
 	{
 		return m_isInAir;
 	}
-
+	void	SetSize(GLint width, GLint height);
+	Vector2	GetSize() {
+		return m_Size;
+	}
 private:
 
 	void(*m_pKeyPreesed)();
@@ -47,6 +50,7 @@ private:
 	std::shared_ptr<SpriteAnimation> m_Jump;
 	std::shared_ptr<SpriteAnimation> m_Nor;
 	std::shared_ptr<SpriteAnimation> obj;
+	Vector2 m_Size;
 };
 
 

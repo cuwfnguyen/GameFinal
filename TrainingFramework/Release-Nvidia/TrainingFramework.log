@@ -1,36 +1,36 @@
 ﻿  GSPlay.cpp
 E:\20201\ThucTapGameLoft\Programming_anim\TrainingFramework\src\GameObject\Player.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 src\GameStates\GSPlay.cpp(40): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(45): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(45): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(52): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(52): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(61): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(61): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(70): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(70): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(82): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(82): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(334): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(335): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(339): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+src\GameStates\GSPlay.cpp(46): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+src\GameStates\GSPlay.cpp(51): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+src\GameStates\GSPlay.cpp(51): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+src\GameStates\GSPlay.cpp(58): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+src\GameStates\GSPlay.cpp(58): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+src\GameStates\GSPlay.cpp(68): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+src\GameStates\GSPlay.cpp(68): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+src\GameStates\GSPlay.cpp(77): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+src\GameStates\GSPlay.cpp(77): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+src\GameStates\GSPlay.cpp(89): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+src\GameStates\GSPlay.cpp(89): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+src\GameStates\GSPlay.cpp(353): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+src\GameStates\GSPlay.cpp(364): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
 C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\memory(901): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\memory(971): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[9],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[9],TEXT_COLOR &&,double &&)' being compiled
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\memory(971): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&,TEXT_COLOR &&,double &&)' being compiled
           with
           [
               _Ty=Text
           ]
-  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\memory(971): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[9],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[9],TEXT_COLOR &&,double &&)' being compiled
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\memory(971): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&,TEXT_COLOR &&,double &&)' being compiled
           with
           [
               _Ty=Text
           ]
-  src\GameStates\GSPlay.cpp(81): note: see reference to function template instantiation 'std::shared_ptr<Text> std::make_shared<Text,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[9],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[9],TEXT_COLOR &&,double &&)' being compiled
+  src\GameStates\GSPlay.cpp(88): note: see reference to function template instantiation 'std::shared_ptr<Text> std::make_shared<Text,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&,TEXT_COLOR &&,double &&)' being compiled
 LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
-  1 of 2122 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+  4 of 2207 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    8 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   TrainingFramework.vcxproj -> E:\20201\ThucTapGameLoft\Programming_anim\\BIN-Nvidia\TrainingFramework.exe
   TrainingFramework.vcxproj -> E:\20201\ThucTapGameLoft\Programming_anim\\BIN-Nvidia\TrainingFramework.pdb (Full PDB)

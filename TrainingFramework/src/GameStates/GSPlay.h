@@ -29,7 +29,7 @@ public:
 	void Draw();
 	
 	void SetNewPostionForBullet();
-	
+	void GSPlay::CheckCoin();
 	//inline std::shared_ptr<SpriteAnimation> CurrentState()const
 //	{
 	//	return obj;
@@ -46,5 +46,6 @@ private:
 	std::shared_ptr<Player> m_Player;
 	std::vector <std::shared_ptr<GameButton>>	m_listButton;
 	std::list<std::shared_ptr<Obstacles>> m_listObs;
+
 };
 

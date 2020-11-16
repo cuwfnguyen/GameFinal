@@ -158,9 +158,14 @@ Vector2 SpriteAnimation::Get2DPosition()
 	return m_Vec2DPos;
 }
 
-
+Vector2 SpriteAnimation::GetSize() 
+{
+	return m_GSize;
+}
 void SpriteAnimation::SetSize(GLint width, GLint height)
 {
+	m_GSize.x = width;
+	m_GSize.y = height;
 	m_iWidth = width;
 	m_iHeight = height;
 	m_Vec3Scale = Vector3((float)m_iWidth / screenWidth, (float)m_iHeight / screenHeight, 1);

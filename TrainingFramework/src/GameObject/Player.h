@@ -4,7 +4,6 @@
 #include "SpriteAnimation.h";
 #include "Obstacles.h"
 
-
 class Obstacles;
 extern int g;
 class Player : public Sprite2D
@@ -40,16 +39,16 @@ private:
 	bool m_isKeyPressed;
 
 	bool m_isInAir;
-
-	bool m_isAlive;
-
+	bool m_isActive = true;
 	int m_ySpeed;
 	int MOVE = 0;
 	Vector2 m_Position;
 	std::vector < std::shared_ptr<SpriteAnimation>> m_listSpriteAnimations;
-	std::shared_ptr<SpriteAnimation> m_Jump;
+	std::shared_ptr<SpriteAnimation> m_JumpUp;
+	std::shared_ptr<SpriteAnimation> m_JumpDown;
 	std::shared_ptr<SpriteAnimation> m_Nor;
 	std::shared_ptr<SpriteAnimation> obj;
+	std::shared_ptr<SpriteAnimation> m_Over;
 	Vector2 m_Size;
 };
 

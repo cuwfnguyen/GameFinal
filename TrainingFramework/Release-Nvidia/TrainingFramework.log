@@ -1,19 +1,36 @@
-﻿  GSPlay.cpp
+﻿  Player.cpp
+src\GameObject\Player.cpp(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gameobject\Player.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+src\GameObject\Player.cpp(74): warning C4244: '=': conversion from 'GLint' to 'GLfloat', possible loss of data
+src\GameObject\Player.cpp(75): warning C4244: '=': conversion from 'GLint' to 'GLfloat', possible loss of data
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\memory(901): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\memory(971): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Models>&,std::shared_ptr<Shaders>&,std::shared_ptr<Texture>&,int,int>(std::shared_ptr<Models> &,std::shared_ptr<Shaders> &,std::shared_ptr<Texture> &,int &&,int &&)' being compiled
+          with
+          [
+              _Ty=SpriteAnimation
+          ]
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\memory(971): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Models>&,std::shared_ptr<Shaders>&,std::shared_ptr<Texture>&,int,int>(std::shared_ptr<Models> &,std::shared_ptr<Shaders> &,std::shared_ptr<Texture> &,int &&,int &&)' being compiled
+          with
+          [
+              _Ty=SpriteAnimation
+          ]
+  src\GameObject\Player.cpp(21): note: see reference to function template instantiation 'std::shared_ptr<SpriteAnimation> std::make_shared<SpriteAnimation,std::shared_ptr<Models>&,std::shared_ptr<Shaders>&,std::shared_ptr<Texture>&,int,int>(std::shared_ptr<Models> &,std::shared_ptr<Shaders> &,std::shared_ptr<Texture> &,int &&,int &&)' being compiled
+  GSPlay.cpp
 E:\20201\ThucTapGameLoft\Programming_anim\TrainingFramework\src\GameObject\Player.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 src\GameStates\GSPlay.cpp(40): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
 src\GameStates\GSPlay.cpp(46): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(51): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(51): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(58): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(58): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(68): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(68): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(77): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(77): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(89): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(89): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(353): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
-src\GameStates\GSPlay.cpp(364): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+src\GameStates\GSPlay.cpp(53): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+src\GameStates\GSPlay.cpp(53): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+src\GameStates\GSPlay.cpp(65): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+src\GameStates\GSPlay.cpp(65): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+src\GameStates\GSPlay.cpp(74): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+src\GameStates\GSPlay.cpp(74): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+src\GameStates\GSPlay.cpp(86): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+src\GameStates\GSPlay.cpp(86): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+src\GameStates\GSPlay.cpp(128): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+src\GameStates\GSPlay.cpp(136): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+src\GameStates\GSPlay.cpp(239): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+src\GameStates\GSPlay.cpp(250): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
 C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\memory(901): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\memory(971): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&,TEXT_COLOR &&,double &&)' being compiled
           with
@@ -25,12 +42,12 @@ C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\memory(901): warn
           [
               _Ty=Text
           ]
-  src\GameStates\GSPlay.cpp(88): note: see reference to function template instantiation 'std::shared_ptr<Text> std::make_shared<Text,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&,TEXT_COLOR &&,double &&)' being compiled
+  src\GameStates\GSPlay.cpp(85): note: see reference to function template instantiation 'std::shared_ptr<Text> std::make_shared<Text,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,std::basic_string<char,std::char_traits<char>,std::allocator<char>>,TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,std::basic_string<char,std::char_traits<char>,std::allocator<char>> &&,TEXT_COLOR &&,double &&)' being compiled
 LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
-  4 of 2207 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+  10 of 2243 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    8 functions had inline decision re-evaluated but remain unchanged
+    96 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   TrainingFramework.vcxproj -> E:\20201\ThucTapGameLoft\Programming_anim\\BIN-Nvidia\TrainingFramework.exe
   TrainingFramework.vcxproj -> E:\20201\ThucTapGameLoft\Programming_anim\\BIN-Nvidia\TrainingFramework.pdb (Full PDB)

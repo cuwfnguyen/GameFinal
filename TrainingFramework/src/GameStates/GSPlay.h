@@ -35,9 +35,10 @@ public:
 	//	return obj;
 	//}
 private:
-	const int m_MapWidth =2036;
-	const int m_MapHeight = 550;
+	const int m_MapWidth =4800;
+	const int m_MapHeight = 600;
 	std::shared_ptr<Sprite2D> m_BackGround;
+	std::shared_ptr<Sprite2D> m_BackGround1;
 	std::shared_ptr<Text>  m_score;
 	std::shared_ptr<SpriteAnimation> coin;
 	std::vector < std::shared_ptr<Sprite2D>> m_listSprite2D;

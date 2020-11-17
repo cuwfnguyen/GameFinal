@@ -90,6 +90,9 @@
     <ClCompile Include="src\GameObject\Player.cpp">
       <Filter>TrainingFramework\src\GameObject</Filter>
     </ClCompile>
+    <ClCompile Include="src\GameStates\GSOver.cpp">
+      <Filter>TrainingFramework\src\GameStates</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Application.h">
@@ -268,6 +271,9 @@
     </ClInclude>
     <ClInclude Include="..\..\soloud20200207\include\soloud_wavstream.h">
       <Filter>TrainingFramework\include\Soloud</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GameStates\GSOver.h">
+      <Filter>TrainingFramework\src\GameStates</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

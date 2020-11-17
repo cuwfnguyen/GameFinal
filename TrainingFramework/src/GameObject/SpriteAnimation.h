@@ -30,6 +30,7 @@ public:
 	Vector2		Get2DPosition();
 	void		SetSize(GLint width, GLint height);
 	bool		m_isActive = true;
+	bool		m_isOver = false;
 	Vector2		GetSize();
 };
 

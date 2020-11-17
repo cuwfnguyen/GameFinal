@@ -8,7 +8,7 @@
 #include "GSSetting.h"
 #include "GameStatebase.h"
 #include"GSCredit.h"
-
+#include"GSOver.h"
 std::shared_ptr<GameStateBase> GameStateBase::CreateState(StateTypes stt)
 {
 	std::shared_ptr<GameStateBase> gs = nullptr;
@@ -32,7 +32,9 @@ std::shared_ptr<GameStateBase> GameStateBase::CreateState(StateTypes stt)
 	case STATE_Credit:
 		gs = std::make_shared<GSCredit>();
 		break;
-
+	case STATE_Over:
+		gs = std::make_shared<GSOver>();
+		break;
 	default:
 		break;
 	}

@@ -1,6 +1,6 @@
 #pragma once
 #include "gamestatebase.h"
-
+#include "SpriteAnimation.h";
 class GSIntro :
 	public GameStateBase
 {
@@ -24,5 +24,6 @@ private:
 	std::shared_ptr<Sprite2D> m_logo;
 	std::vector<std::shared_ptr<Sprite2D>> m_listObject;
 	float m_time;
+	std::shared_ptr<SpriteAnimation> m_Nor;
 };
 

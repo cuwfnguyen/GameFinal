@@ -207,3 +207,11 @@ void ResourceManagers::ResumeSound(const std::string &name) {
 	}
 	m_Soloud->setPauseAll(false);
 }
+void ResourceManagers::StopSound(const std::string &name) {
+	std::shared_ptr<SoLoud::Wav>wave;
+	auto it = m_MapWave.find(name);
+	if (it != m_MapWave.end()) {
+		wave = it->second;
+	}
+	m_Soloud->stopAudioSource(*wave);
+}

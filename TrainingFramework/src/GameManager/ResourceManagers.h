@@ -37,6 +37,7 @@ public:
 	void PlaySound(const std::string& name, bool loop = false);
 	void PauseSound(const std::string&name);
 	void ResumeSound(const std::string&name);
+	void StopSound(const std::string&name);
 private:
 	std::map<std::string, std::shared_ptr<Shaders>> m_MapShader;
 	std::map<std::string, std::shared_ptr<Texture>> m_MapTexture;

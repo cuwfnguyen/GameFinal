@@ -6,10 +6,10 @@ Player::Player(std::shared_ptr<Models> model, std::shared_ptr<Shaders> shader, s
 	: Sprite2D(model, shader, texture)
 {
 	m_isInAir = false;
+
 	m_Position.x = 50;
 	m_Position.y = 500;
 	// Animation
-
 	shader = ResourceManagers::GetInstance()->GetShader("Animation");
 	texture = ResourceManagers::GetInstance()->GetTexture("test2");
 	m_Nor = std::make_shared<SpriteAnimation>(model, shader, texture, 10, 0.07f);
@@ -88,16 +88,14 @@ void Player::CheckObs(std::shared_ptr<Obstacles> obs) {
 		distY = -distY;
 	float distW = (50 + sizeObs.x) / 2;
 	float distH = (50 + sizeObs.y) / 2; 
-
 	if (distX +8<= distW && distY +8<= distH)//+8 de nhin truc quan hon
-	{
+		{	
 		if(!obj->m_isOver)
 		{
-			obj = m_Over;
-		//	ResourceManagers::GetInstance()->PlaySound("over", false);
+			//obj = m_Over;
 			obj->m_isOver = true;
+			//ResourceManagers::GetInstance()->PlaySound("over", false);
 			printf("game over");
-			
 		}
 	}
 }
@@ -128,7 +126,7 @@ void Player::Move(GLfloat deltaTime) {
 			{
 				obj = m_JumpDown;
 				
-				m_Position.y += 200 * deltaTime;
+				m_Position.y += 220 * deltaTime;
 
 				obj->Set2DPosition(m_Position);
 			}	

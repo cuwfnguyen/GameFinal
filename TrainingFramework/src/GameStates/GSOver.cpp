@@ -32,6 +32,7 @@ void GSOver::Init()
 	button->SetSize(80, 60);
 	button->SetOnClick([]() {
 		GameStateMachine::GetInstance()->ChangeState(StateTypes::STATE_Play);
+		ResourceManagers::GetInstance()->PauseSound("game_over");
 	});
 	m_listButton.push_back(button);
 
@@ -41,6 +42,7 @@ void GSOver::Init()
 	button->SetSize(60, 60);
 	button->SetOnClick([]() {
 		GameStateMachine::GetInstance()->ChangeState(StateTypes::STATE_Menu);
+		ResourceManagers::GetInstance()->PauseSound("game_over");
 	});
 	m_listButton.push_back(button);
 

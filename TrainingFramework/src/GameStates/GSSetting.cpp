@@ -39,10 +39,10 @@ void GSSetting::Init()
 	m_listButton.push_back(button);
 
 	//sound
-	texture = ResourceManagers::GetInstance()->GetTexture("sound_on");
+	texture = ResourceManagers::GetInstance()->GetTexture("sound_off");
 	button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(screenWidth / 1.96, screenHeight /2);
-	button->SetSize(75,75);
+	button->Set2DPosition(482,286);
+	button->SetSize(60, 60);
 	button->SetOnClick([]() 
 	{
 		check = 1;
@@ -54,15 +54,44 @@ void GSSetting::Init()
 	
 	m_listButton.push_back(button);
 
-	texture = ResourceManagers::GetInstance()->GetTexture("sound_off");
+	texture = ResourceManagers::GetInstance()->GetTexture("sound_on");
 	button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(screenWidth / 1.6, screenHeight / 2);
-	button->SetSize(80, 80);
+	button->Set2DPosition(560,286);
+	button->SetSize(55,55);
 	button->SetOnClick([]()
 	{
 		check = 0;
 	});
 	if (check == 0) 
+	{
+		sound = false;
+	}
+	m_listButton.push_back(button);
+
+	texture = ResourceManagers::GetInstance()->GetTexture("sound_off");
+	button = std::make_shared<GameButton>(model, shader, texture);
+	button->Set2DPosition(482, 368);
+	button->SetSize(60, 60);
+	button->SetOnClick([]()
+	{
+		check = 1;
+	});
+	if (check == 1)
+	{
+		sound = true;
+	}
+
+	m_listButton.push_back(button);
+
+	texture = ResourceManagers::GetInstance()->GetTexture("sound_on");
+	button = std::make_shared<GameButton>(model, shader, texture);
+	button->Set2DPosition(560, 368);
+	button->SetSize(55,55);
+	button->SetOnClick([]()
+	{
+		check = 0;
+	});
+	if (check == 0)
 	{
 		sound = false;
 	}

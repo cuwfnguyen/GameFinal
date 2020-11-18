@@ -1,25 +1,24 @@
-﻿  Player.cpp
-src\GameObject\Player.cpp(1): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-e:\20201\thuctapgameloft\programming_anim\trainingframework\src\gameobject\Player.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-src\GameObject\Player.cpp(74): warning C4244: '=': conversion from 'GLint' to 'GLfloat', possible loss of data
-src\GameObject\Player.cpp(75): warning C4244: '=': conversion from 'GLint' to 'GLfloat', possible loss of data
-C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\memory(901): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\memory(971): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Models>&,std::shared_ptr<Shaders>&,std::shared_ptr<Texture>&,int,int>(std::shared_ptr<Models> &,std::shared_ptr<Shaders> &,std::shared_ptr<Texture> &,int &&,int &&)' being compiled
+﻿  GSSetting.cpp
+src\GameStates\GSSetting.cpp(26): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+src\GameStates\GSSetting.cpp(34): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+src\GameStates\GSSetting.cpp(34): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\memory(901): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\memory(971): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[8],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[8],TEXT_COLOR &&,double &&)' being compiled
           with
           [
-              _Ty=SpriteAnimation
+              _Ty=Text
           ]
-  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\memory(971): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Models>&,std::shared_ptr<Shaders>&,std::shared_ptr<Texture>&,int,int>(std::shared_ptr<Models> &,std::shared_ptr<Shaders> &,std::shared_ptr<Texture> &,int &&,int &&)' being compiled
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\memory(971): note: see reference to function template instantiation 'std::_Ref_count_obj<_Ty>::_Ref_count_obj<std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[8],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[8],TEXT_COLOR &&,double &&)' being compiled
           with
           [
-              _Ty=SpriteAnimation
+              _Ty=Text
           ]
-  src\GameObject\Player.cpp(21): note: see reference to function template instantiation 'std::shared_ptr<SpriteAnimation> std::make_shared<SpriteAnimation,std::shared_ptr<Models>&,std::shared_ptr<Shaders>&,std::shared_ptr<Texture>&,int,int>(std::shared_ptr<Models> &,std::shared_ptr<Shaders> &,std::shared_ptr<Texture> &,int &&,int &&)' being compiled
+  src\GameStates\GSSetting.cpp(103): note: see reference to function template instantiation 'std::shared_ptr<Text> std::make_shared<Text,std::shared_ptr<Shaders>&,std::shared_ptr<Font>&,const char(&)[8],TEXT_COLOR,double>(std::shared_ptr<Shaders> &,std::shared_ptr<Font> &,const char (&)[8],TEXT_COLOR &&,double &&)' being compiled
 LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
-  3 of 2209 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    17 functions had inline decision re-evaluated but remain unchanged
+  14 of 2215 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
+    6 functions were new in current compilation
+    51 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   TrainingFramework.vcxproj -> E:\20201\ThucTapGameLoft\Programming_anim\\BIN-Nvidia\TrainingFramework.exe
   TrainingFramework.vcxproj -> E:\20201\ThucTapGameLoft\Programming_anim\\BIN-Nvidia\TrainingFramework.pdb (Full PDB)

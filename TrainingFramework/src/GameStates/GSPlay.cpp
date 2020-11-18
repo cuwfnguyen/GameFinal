@@ -88,6 +88,7 @@ void GSPlay::Init()
 	m_score->Set2DPosition(0.17*screenWidth,screenHeight/15);
 	m_best = std::make_shared< Text>(shader, font, "Best: " + std::to_string(best), TEXT_COLOR::RED, 0.95);
 	m_best->Set2DPosition(0.4*screenWidth, screenHeight / 15);
+
 	//sinh coin
 	for (int i = 0; i < 10; i++) 
 	{
@@ -150,13 +151,13 @@ void GSPlay::Init()
 
 		texture = ResourceManagers::GetInstance()->GetTexture("obs2.4");
 		m_obs = std::make_shared<Obstacles>(model, shader, texture);
-		m_obs->Set2DPosition(1400 + i*deltaPos * 8, 446);
+		m_obs->Set2DPosition(1400 + i*deltaPos * 8, 434);
 		m_obs->SetSize(50, 193);
 		m_listObs.push_back(m_obs);
 
 		texture = ResourceManagers::GetInstance()->GetTexture("obs2.3");
 		m_obs = std::make_shared<Obstacles>(model, shader, texture);
-		m_obs->Set2DPosition(1400 + i*deltaPos * 8, 152);
+		m_obs->Set2DPosition(1400 + i*deltaPos * 8, 149);
 		m_obs->SetSize(50, 165);
 		m_listObs.push_back(m_obs);
 	}
@@ -176,21 +177,21 @@ void GSPlay::Init()
 
 		texture = ResourceManagers::GetInstance()->GetTexture("obs2.2");
 		m_obs = std::make_shared<Obstacles>(model, shader, texture);
-		m_obs->Set2DPosition(6050 + 0.5*deltaPos*i, 515);
+		m_obs->Set2DPosition(4545 + 0.5*deltaPos*i, 515);
 		m_obs->SetSize(34, 31);
 		m_listObs.push_back(m_obs);
 	}
 
 	m_listCoin[0]->Set2DPosition(452, 353);
 	m_listCoin[1]->Set2DPosition(70,450);
-	/*m_listCoin[2]->Set2DPosition(452, 353);
-	m_listCoin[3]->Set2DPosition(552, 353);
-	m_listCoin[4]->Set2DPosition(452, 353);
-	m_listCoin[5]->Set2DPosition(552, 353);
-	m_listCoin[6]->Set2DPosition(452, 353);
-	m_listCoin[7]->Set2DPosition(552, 353);
-	m_listCoin[8]->Set2DPosition(452, 353);*/
-	m_listCoin[9]->Set2DPosition(552, 353);
+	m_listCoin[2]->Set2DPosition(980, 513);
+	m_listCoin[3]->Set2DPosition(1180, 513);
+	//m_listCoin[4]->Set2DPosition(1380, 513);
+	//m_listCoin[5]->Set2DPosition(1580, 513);
+	m_listCoin[6]->Set2DPosition(3500,230);
+	m_listCoin[7]->Set2DPosition(3600, 230);
+	m_listCoin[8]->Set2DPosition(2180, 513);
+	m_listCoin[9]->Set2DPosition(3000, 150);
 	//if(sound=true)
 	//{
 		ResourceManagers::GetInstance()->PlaySound("bg_play",true);
@@ -337,14 +338,16 @@ void GSPlay::Update(float deltaTime)
 			{
 				pos.x -= 100 * deltaTime;
 				obs->Set2DPosition(pos);
+				obs->Update(deltaTime);
 			}
 			else if (m_listObs[1]->Get2DPosition().x <=100)
 			{
 				pos.x -= 200 * deltaTime;
 				obs->Set2DPosition(pos);
+				obs->Update(deltaTime);
 			}
 			
-			obs->Update(deltaTime);
+			
 		}
 		//het man choi, check obs o vi tri cuoi cung cua backgroud
 		if(m_listObs[0]->Get2DPosition().x<=800)

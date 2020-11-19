@@ -213,5 +213,5 @@ void ResourceManagers::StopSound(const std::string &name) {
 	if (it != m_MapWave.end()) {
 		wave = it->second;
 	}
-	m_Soloud->stopAudioSource(*wave);
+	m_Soloud->stopAll();
 }

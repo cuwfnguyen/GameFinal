@@ -10,10 +10,14 @@
 #include "SpriteAnimation.h"
 #include <WinUser.h>
 #include"Player.h"
+#include"GSSetting.h"
 
 extern int screenWidth; //need get on Graphic engine
 extern int screenHeight; //need get on Graphic engine
-bool m_isPause = false;
+extern bool m_music;
+extern bool m_sound;
+
+bool m_isPause;
 int m_bgX = screenHeight/2;
 int score;
 int best =0;
@@ -30,6 +34,7 @@ GSPlay::~GSPlay()
 
 void GSPlay::Init()
 {
+	bool m_isPause = false;
 	score = 0;
 	int deltaPos = 200;
 	auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D");
@@ -90,7 +95,7 @@ void GSPlay::Init()
 	m_best->Set2DPosition(0.4*screenWidth, screenHeight / 15);
 
 	//sinh coin
-	for (int i = 0; i < 10; i++) 
+	for (int i = 0; i < 20; i++) 
 	{
 		shader = ResourceManagers::GetInstance()->GetShader("Animation");
 		texture = ResourceManagers::GetInstance()->GetTexture("coin1");
@@ -105,7 +110,7 @@ void GSPlay::Init()
 	//diem end game
 	texture = ResourceManagers::GetInstance()->GetTexture("obs4");
 	std::shared_ptr<Obstacles> m_obs = std::make_shared<Obstacles>(model, shader, texture);
-	m_obs->Set2DPosition(6500, 350);
+	m_obs->Set2DPosition(7000, 350);
 	m_obs->SetSize(39,27);
 	m_listObs.push_back(m_obs);
 
@@ -115,7 +120,11 @@ void GSPlay::Init()
 	m_obs->Set2DPosition(2100, 350);
 	m_obs->SetSize(195, 112);
 	m_listObs.push_back(m_obs);
-
+	texture = ResourceManagers::GetInstance()->GetTexture("obs1.19");
+	m_obs = std::make_shared<Obstacles>(model, shader, texture);
+	m_obs->Set2DPosition(5000, 350);
+	m_obs->SetSize(195, 112);
+	m_listObs.push_back(m_obs);
 	for (int i = 0; i < 4; i++)
 	{
 
@@ -184,25 +193,24 @@ void GSPlay::Init()
 
 	m_listCoin[0]->Set2DPosition(452, 353);
 	m_listCoin[1]->Set2DPosition(70,450);
-	m_listCoin[2]->Set2DPosition(980, 513);
-	m_listCoin[3]->Set2DPosition(1180, 513);
-	//m_listCoin[4]->Set2DPosition(1380, 513);
-	//m_listCoin[5]->Set2DPosition(1580, 513);
-	m_listCoin[6]->Set2DPosition(3500,230);
-	m_listCoin[7]->Set2DPosition(3600, 230);
-	m_listCoin[8]->Set2DPosition(2180, 513);
-	m_listCoin[9]->Set2DPosition(3000, 150);
-	//if(sound=true)
-	//{
+	m_listCoin[2]->Set2DPosition(2050,210);
+	m_listCoin[3]->Set2DPosition(2150,210);
+	m_listCoin[4]->Set2DPosition(280, 320);
+	m_listCoin[5]->Set2DPosition(320, 320);
+	m_listCoin[6]->Set2DPosition(1080, 320);
+	m_listCoin[7]->Set2DPosition(3100, 210);
+	m_listCoin[8]->Set2DPosition(3300, 200);
+	m_listCoin[9]->Set2DPosition(3600, 200);
+	m_listCoin[10]->Set2DPosition(3800, 210);
+	
+	if(m_music)
+	{
 		ResourceManagers::GetInstance()->PlaySound("bg_play",true);
-	//}
+	}
 	
 		
 }
-void GSPlay::CheckCoin()
-{
-	
-}
+
 void GSPlay::Exit()
 {
 }
@@ -212,7 +220,11 @@ void GSPlay::Pause()
 	m_listButton[1]->m_isActive = false;
 	m_listButton[2]->m_isActive = true;
 	m_isPause = true;
-	ResourceManagers::GetInstance()->PauseSound("bg_play");
+	if(m_music)
+	{
+		ResourceManagers::GetInstance()->PauseSound("bg_play");
+	}
+	
 
 }
 
@@ -221,7 +233,10 @@ void GSPlay::Resume()
 	m_listButton[1]->m_isActive = true;
 	m_listButton[2]->m_isActive = false;
 	m_isPause = false;
-	ResourceManagers::GetInstance()->ResumeSound("bg_play");
+	if(m_music)
+	{
+		ResourceManagers::GetInstance()->ResumeSound("bg_play");
+	}
 }
 
 void GSPlay::HandleEvents()
@@ -268,16 +283,28 @@ void GSPlay::Update(float deltaTime)
 		{
 			Vector2 posCoin = coin->Get2DPosition();
 			float px = posObj.x-posCoin.x;
-			float py = posObj.y-posCoin.y;
-
-			if ((px < 20 && (px > -20) && (py > -10) && (py < 10)))
+			float py = posObj.y - posCoin.y;
+			if (px < 0)
+			{
+				px = -px;
+			}
+			
+			if(py < 0)
+			{
+				py = -py;
+			}
+			//size obj 50,50 , coin 25,25
+			if (px < 37 && py < 37)
 			{
 				if (coin->m_isActive)
 				{
 					coin->m_isActive = false;
 					printf("Ghi diem");
 					score += 1;
-					ResourceManagers::GetInstance()->PlaySound("coinsound", false);
+					if (m_sound)
+					{
+						ResourceManagers::GetInstance()->PlaySound("coinsound", false);
+					}
 					if(score>best)
 					{
 						best = score;
@@ -304,7 +331,7 @@ void GSPlay::Update(float deltaTime)
 				}
 				else if (m_listObs[1]->Get2DPosition().x <= 100)
 				{
-					posCoin.x -= 200*deltaTime;
+					posCoin.x -= 150*deltaTime;
 					coin->Set2DPosition(posCoin);
 				}
 			}
@@ -315,7 +342,7 @@ void GSPlay::Update(float deltaTime)
 		for (auto it : m_listButton)
 		{
 			it->Update(deltaTime);
-		}
+		} 
 	
 		//check vat can
 		for (auto obs : m_listObs)
@@ -325,7 +352,10 @@ void GSPlay::Update(float deltaTime)
 			{
 				//ResourceManagers::GetInstance()->PlaySound("over", false);
 				//printf("Game Over");
-				ResourceManagers::GetInstance()->StopSound("bg_play");
+				if(m_music)
+				{
+					ResourceManagers::GetInstance()->StopSound("bg_play");
+				}
 				GameStateMachine::GetInstance()->ChangeState(StateTypes::STATE_Over);
 				
 			}
@@ -342,8 +372,8 @@ void GSPlay::Update(float deltaTime)
 			}
 			else if (m_listObs[1]->Get2DPosition().x <=100)
 			{
-				pos.x -= 200 * deltaTime;
-				obs->Set2DPosition(pos);
+				pos.x -= 150 * deltaTime;
+				obs->Set2DPosition(pos);  
 				obs->Update(deltaTime);
 			}
 			
@@ -352,7 +382,10 @@ void GSPlay::Update(float deltaTime)
 		//het man choi, check obs o vi tri cuoi cung cua backgroud
 		if(m_listObs[0]->Get2DPosition().x<=800)
 		{
-			ResourceManagers::GetInstance()->StopSound("bg_play");
+			if (m_music)
+			{
+				ResourceManagers::GetInstance()->StopSound("bg_play");
+			}
 			GameStateMachine::GetInstance()->ChangeState(StateTypes::STATE_Over);
 		}
 		m_score->Update(deltaTime);

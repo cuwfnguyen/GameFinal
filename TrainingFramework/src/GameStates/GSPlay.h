@@ -29,7 +29,6 @@ public:
 	void Draw();
 	
 	void SetNewPostionForBullet();
-	void GSPlay::CheckCoin();
 	
 private:
 	const int m_MapWidth =4800;

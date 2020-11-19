@@ -2,7 +2,8 @@
 
 extern int screenWidth; //need get on Graphic engine
 extern int screenHeight; //need get on Graphic 
-int check = 0;
+bool m_sound;
+bool m_music;
 GSSetting::GSSetting()
 {
 
@@ -39,62 +40,49 @@ void GSSetting::Init()
 	m_listButton.push_back(button);
 
 	//sound
-	texture = ResourceManagers::GetInstance()->GetTexture("sound_off");
+	texture = ResourceManagers::GetInstance()->GetTexture("sound_on");
 	button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(482,286);
-	button->SetSize(60, 60);
+	button->Set2DPosition(515,286);
+	button->SetSize(55, 55);
 	button->SetOnClick([]() 
 	{
-		check = 1;
+		m_sound = false;
 	});
-	if (check == 1)
-	{
-		sound = true;
-	}
 	
 	m_listButton.push_back(button);
 
-	texture = ResourceManagers::GetInstance()->GetTexture("sound_on");
+	texture = ResourceManagers::GetInstance()->GetTexture("sound_off");
 	button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(560,286);
-	button->SetSize(55,55);
+	button->Set2DPosition(515,286);
+	button->SetSize(60,60);
+	button->m_isActive = false;
 	button->SetOnClick([]()
 	{
-		check = 0;
+		m_sound = true;
 	});
-	if (check == 0) 
+	m_listButton.push_back(button);
+	
+	//music
+	texture = ResourceManagers::GetInstance()->GetTexture("sound_on");
+	button = std::make_shared<GameButton>(model, shader, texture);
+	button->Set2DPosition(515, 368);
+	button->SetSize(55, 55);
+	button->SetOnClick([]()
 	{
-		sound = false;
-	}
+		m_music = false;
+	});
+	
 	m_listButton.push_back(button);
 
 	texture = ResourceManagers::GetInstance()->GetTexture("sound_off");
 	button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(482, 368);
-	button->SetSize(60, 60);
+	button->Set2DPosition(515, 368);
+	button->SetSize(60,60);
+	button->m_isActive = false;
 	button->SetOnClick([]()
 	{
-		check = 1;
+		m_music = true;
 	});
-	if (check == 1)
-	{
-		sound = true;
-	}
-
-	m_listButton.push_back(button);
-
-	texture = ResourceManagers::GetInstance()->GetTexture("sound_on");
-	button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(560, 368);
-	button->SetSize(55,55);
-	button->SetOnClick([]()
-	{
-		check = 0;
-	});
-	if (check == 0)
-	{
-		sound = false;
-	}
 	m_listButton.push_back(button);
 
 	//text game title
@@ -102,6 +90,8 @@ void GSSetting::Init()
 	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("arialbd");
 	m_Text_gameName = std::make_shared< Text>(shader, font, "SETTING", TEXT_COLOR::RED, 0.7);
 //	m_Text_gameName->Set2DPosition(Vector2(2.7*screenWidth / 6, screenHeight / 8));
+
+
 }
 
 void GSSetting::Exit()
@@ -121,7 +111,26 @@ void GSSetting::Resume()
 
 void GSSetting::HandleEvents()
 {
-
+	if (!m_music)
+	{
+		m_listButton[3]->m_isActive = false;
+		m_listButton[4]->m_isActive = true;
+	}
+	if (m_music)
+	{
+		m_listButton[3]->m_isActive = true;
+		m_listButton[4]->m_isActive = false;
+	}
+	if (!m_sound)
+	{
+		m_listButton[1]->m_isActive = false;
+		m_listButton[2]->m_isActive = true;
+	}
+	if (m_sound)
+	{
+		m_listButton[1]->m_isActive = true;
+		m_listButton[2]->m_isActive = false;
+	}
 }
 
 void GSSetting::HandleKeyEvents(int key, bool bIsPressed)
@@ -133,17 +142,26 @@ void GSSetting::HandleTouchEvents(int x, int y, bool bIsPressed)
 {
 	for (auto it : m_listButton)
 	{
-		(it)->HandleTouchEvents(x, y, bIsPressed);
-		if ((it)->IsHandle()) break;
+		if(it->m_isActive)
+		{
+			(it)->HandleTouchEvents(x, y, bIsPressed);
+			if ((it)->IsHandle()) break;
+		}
+		
 	}
 }
 
 void GSSetting::Update(float deltaTime)
 {
+	HandleEvents();
 	m_BackGround->Update(deltaTime);
 	for (auto it : m_listButton)
 	{
-		it->Update(deltaTime);
+		if (it->m_isActive)
+		{
+			it->Update(deltaTime);
+		}
+			
 	}
 }
 
@@ -152,7 +170,11 @@ void GSSetting::Draw()
 	m_BackGround->Draw();
 	for (auto it : m_listButton)
 	{
-		it->Draw();
+		if (it->m_isActive)
+		{
+			it->Draw();
+		}
+		
 	}
 	m_Text_gameName->Draw();
 }

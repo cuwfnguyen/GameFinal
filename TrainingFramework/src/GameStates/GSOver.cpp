@@ -2,6 +2,7 @@
 
 extern int screenWidth; 
 extern int screenHeight; 
+extern bool m_music;
 GSOver::GSOver()
 {
 
@@ -52,7 +53,11 @@ void GSOver::Init()
 	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("arialbd");
 	m_Text_gameName = std::make_shared< Text>(shader, font, "MENU", TEXT_COLOR::RED, 1.0);
 
-	ResourceManagers::GetInstance()->PlaySound("game_over");
+	if(m_music)
+	{
+		ResourceManagers::GetInstance()->PlaySound("game_over");
+	}
+	
 
 }
 

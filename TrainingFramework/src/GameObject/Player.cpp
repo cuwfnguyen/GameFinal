@@ -29,12 +29,12 @@ Player::Player(std::shared_ptr<Models> model, std::shared_ptr<Shaders> shader, s
 	m_JumpDown->SetSize(50, 50);;
 	m_listSpriteAnimations.push_back(m_JumpDown);
 
-	texture = ResourceManagers::GetInstance()->GetTexture("over");
+	/*texture = ResourceManagers::GetInstance()->GetTexture("over");
 	m_Over = std::make_shared<SpriteAnimation>(model, shader, texture, 5, 0.05f);
 	m_Over->Set2DPosition(m_Position.x, m_Position.y);
 	m_Over->SetSize(50, 50);;
 	m_listSpriteAnimations.push_back(m_Over);
-
+*/
 	obj = m_Nor;
 
 }

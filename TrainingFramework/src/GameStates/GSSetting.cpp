@@ -43,7 +43,7 @@ void GSSetting::Init()
 	texture = ResourceManagers::GetInstance()->GetTexture("sound_on");
 	button = std::make_shared<GameButton>(model, shader, texture);
 	button->Set2DPosition(515,286);
-	button->SetSize(55, 55);
+	button->SetSize(60, 60);
 	button->SetOnClick([]() 
 	{
 		m_sound = false;
@@ -66,7 +66,7 @@ void GSSetting::Init()
 	texture = ResourceManagers::GetInstance()->GetTexture("sound_on");
 	button = std::make_shared<GameButton>(model, shader, texture);
 	button->Set2DPosition(515, 368);
-	button->SetSize(55, 55);
+	button->SetSize(60, 60);
 	button->SetOnClick([]()
 	{
 		m_music = false;
@@ -87,8 +87,8 @@ void GSSetting::Init()
 
 	//text game title
 	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
-	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("arialbd");
-	m_Text_gameName = std::make_shared< Text>(shader, font, "SETTING", TEXT_COLOR::RED, 0.7);
+	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("game");
+	m_Text_gameName = std::make_shared< Text>(shader, font, "SETTING", TEXT_COLOR::RED, 1.2);
 //	m_Text_gameName->Set2DPosition(Vector2(2.7*screenWidth / 6, screenHeight / 8));
 
 

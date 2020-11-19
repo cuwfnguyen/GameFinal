@@ -20,24 +20,17 @@ void GSIntro::Init()
 {
 	auto model = ResourceManagers::GetInstance()->GetModel("Sprite2D");
 	auto shader = ResourceManagers::GetInstance()->GetShader("TextureShader");
-	auto texture = ResourceManagers::GetInstance()->GetTexture("logo1");
+	auto texture = ResourceManagers::GetInstance()->GetTexture("logo");
 
 	m_logo = std::make_shared<Sprite2D>(model, shader, texture);
 	m_logo->Set2DPosition(screenWidth / 2, screenHeight / 2);
-	m_logo->SetSize(200, 200);
+	m_logo->SetSize(800,600);
 
 	/*shader = ResourceManagers::GetInstance()->GetShader("Animation");
 	texture = ResourceManagers::GetInstance()->GetTexture("test2");
 	m_Nor = std::make_shared<SpriteAnimation>(model, shader, texture, 10, 0.07f);
 	m_Nor->Set2DPosition(screenWidth / 2, 500);
 	m_Nor->SetSize(50, 50);*/
-
-	/*texture = ResourceManagers::GetInstance()->GetTexture("Dirt");
-	auto test = std::make_shared<Sprite2D>(model, shader, texture);
-	test->Set2DPosition(screenWidth / 2, 600);
-	test->SetSize(80, 80);
-
-	m_listObject.push_back(test);*/
 }
 
 void GSIntro::Exit()
@@ -80,7 +73,7 @@ void GSIntro::Update(float deltaTime)
 		GameStateMachine::GetInstance()->ChangeState(StateTypes::STATE_Menu);
 		m_time = 0;
 	}
-//	m_Nor->Update(deltaTime);
+	//m_Nor->Update(deltaTime);
 
 }
 

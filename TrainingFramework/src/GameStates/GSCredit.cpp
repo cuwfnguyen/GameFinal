@@ -39,8 +39,8 @@ void GSCredit::Init()
 	
 	//text game title
 	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
-	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("arialbd");
-	m_Text_gameName = std::make_shared< Text>(shader, font, "CREDIT", TEXT_COLOR::BLACK, 1.0);
+	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("game");
+	m_Text_gameName = std::make_shared< Text>(shader, font, "CREDIT", TEXT_COLOR::BLACK, 1.2);
 	//m_Text_gameName->Set2DPosition(Vector2(screenWidth / 2.5, 80));
 }
 void GSCredit::Exit()

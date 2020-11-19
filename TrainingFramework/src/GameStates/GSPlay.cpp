@@ -57,7 +57,7 @@ void GSPlay::Init()
 	std::shared_ptr<GameButton> button;
 	texture = ResourceManagers::GetInstance()->GetTexture("back_play");
 	button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(0.05*screenWidth, screenHeight / 20);
+	button->Set2DPosition(0.05*screenWidth, 25);
 	button->SetSize(screenWidth / 18, screenHeight / 14);
 	button->SetOnClick([]() {
 		GameStateMachine::GetInstance()->PopState();
@@ -69,7 +69,7 @@ void GSPlay::Init()
 
 	texture = ResourceManagers::GetInstance()->GetTexture("pause");
 	button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(0.13*screenWidth,  screenHeight / 20);
+	button->Set2DPosition(0.13*screenWidth,  25);
 	button->SetSize(screenWidth / 18, screenHeight / 14);
 	button->m_isActive = true;
 	button->SetOnClick([]() {
@@ -78,7 +78,7 @@ void GSPlay::Init()
 	m_listButton.push_back(button);
 	texture = ResourceManagers::GetInstance()->GetTexture("play1");
 	button = std::make_shared<GameButton>(model, shader, texture);
-	button->Set2DPosition(0.13*screenWidth, screenHeight / 20);
+	button->Set2DPosition(0.13*screenWidth, 25);
 	button->SetSize(screenWidth / 18, screenHeight / 14);
 	button->m_isActive = false;
 	button->SetOnClick([]() {
@@ -88,11 +88,11 @@ void GSPlay::Init()
 
 	//text game title
 	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
-	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("arialbd");
-	m_score = std::make_shared< Text>(shader, font,"Score: "+std::to_string (score), TEXT_COLOR::RED, 0.95);
-	m_score->Set2DPosition(0.17*screenWidth,screenHeight/15);
-	m_best = std::make_shared< Text>(shader, font, "Best: " + std::to_string(best), TEXT_COLOR::RED, 0.95);
-	m_best->Set2DPosition(0.4*screenWidth, screenHeight / 15);
+	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("game");
+	m_score = std::make_shared< Text>(shader, font,"Score:"+std::to_string (score), TEXT_COLOR::RED,1.2);
+	m_score->Set2DPosition(136,screenHeight/15);
+	m_best = std::make_shared< Text>(shader, font, "Best:" + std::to_string(best), TEXT_COLOR::RED, 1.2);
+	m_best->Set2DPosition(300, screenHeight / 15);
 
 	//sinh coin
 	for (int i = 0; i < 20; i++) 

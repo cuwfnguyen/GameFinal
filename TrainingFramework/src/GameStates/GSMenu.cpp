@@ -68,8 +68,8 @@ void GSMenu::Init()
 
 	//text game title
 	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
-	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("arialbd");
-	m_Text_gameName = std::make_shared< Text>(shader, font, "MENU", TEXT_COLOR::RED, 1.0);
+	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("game");
+	m_Text_gameName = std::make_shared< Text>(shader, font, "MENU", TEXT_COLOR::RED, 1.2);
 //	m_Text_gameName->Set2DPosition(Vector2(4*screenWidth/9, screenHeight/6));
 
 	//if (sound == true)

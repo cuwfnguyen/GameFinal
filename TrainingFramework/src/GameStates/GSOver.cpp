@@ -50,7 +50,7 @@ void GSOver::Init()
 
 	//text game title
 	shader = ResourceManagers::GetInstance()->GetShader("TextShader");
-	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("arialbd");
+	std::shared_ptr<Font> font = ResourceManagers::GetInstance()->GetFont("game");
 	m_Text_gameName = std::make_shared< Text>(shader, font, "MENU", TEXT_COLOR::RED, 1.0);
 
 	if(m_music)
